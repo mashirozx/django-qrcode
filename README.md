@@ -1,32 +1,32 @@
-Django + MongoDB: Adaptive QR Code System
+Django 入门~~
 ===
 
-## ˼·
+## 思路
 
-- ͨ�� GitHub OAuth ��ȡ�û��û���Ϣ
+- 通过 GitHub OAuth 获取用户用户信息
 
-- �� MongoDB �н��û�`����`��`���� md5 ֵ`��Ϊ����
+- 在 MongoDB 中将用户`邮箱`和`邮箱 md5 值`作为主键
 
-- ��������Ϊ�û���ʶ���ݲ��������� cookie
+- 以邮箱作为用户标识，暂不考虑折腾 cookie
 
-- ���û��ṩ��΢�ź�֧������ά���ַ����������ݿ�
+- 将用户提供的微信和支付宝二维码字符串存入数据库
 
-- ɨ��ʱͨ�� url ������ѯ ���� md5 ֵ������ HTML inline data
+- 扫码时通过 url 参数查询 邮箱 md5 值并返回 HTML inline data
 
-- ǰ��ͨ�� JavaScript Ϊ inline data ���ɶ�ά��
+- 前端通过 JavaScript 为 inline data 生成二维码
 
-## ���
+## 组件
 
-1. ���ݿ�
+1. 数据库
 
-2. Dashboard ģ��
+2. Dashboard 模块
 
-3. md5 ��ѯģ��
+3. md5 查询模块
 
 ## Other
 
-���� Windows �������������ɺ��ٿ��ǲ��� Linux ����
+基于 Windows 开发，待后端完成后再考虑部署 Linux 测试
 
 ## Permission
 
-��ҵʹ�ý�ֹ
+商业使用禁止
