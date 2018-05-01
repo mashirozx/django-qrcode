@@ -25,7 +25,7 @@ Django + MongoDB: Adaptive QR Code System
 
 ## Other
 
-基于 Windows 开发，后期再后端完成后再考虑部署 Linux 测试
+基于 Windows 开发，待后端完成后再考虑部署 Linux 测试
 
 ## Permission
 
