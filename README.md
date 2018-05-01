@@ -5,13 +5,13 @@ Django 入门~~
 
 - 通过 GitHub OAuth 获取用户用户信息
 
-- 在 ~~MongoDB~~ SQLite 中将用户`邮箱`和`邮箱 md5 值`作为主键
+- 在 ~~MongoDB~~ SQLite 中将用户`邮箱`和邮箱 `md5` 值作为主键
 
 - 以邮箱作为用户标识，暂不考虑折腾 cookie
 
 - 将用户提供的微信和支付宝二维码字符串存入数据库
 
-- 扫码时通过 url 参数查询 邮箱 md5 值并返回 HTML inline data
+- 扫码时通过 url 参数查询 `md5` 并返回 HTML inline data
 
 - 前端通过 JavaScript 为 inline data 生成二维码
 
@@ -26,6 +26,8 @@ Django 入门~~
 ## Other
 
 基于 Windows 开发，待后端完成后再考虑部署 Linux 测试
+
+先搞定 SQLite 再迁移 MongoDB 吧
 
 ## Permission
 
