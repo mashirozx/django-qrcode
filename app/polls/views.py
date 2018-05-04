@@ -3,6 +3,37 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 
+from .models import Question  # 这个很重要！！
+
+from django.template import loader  # 常规加载模板
+from django.shortcuts import render  # 快捷套用模板，可以省去 loader 和 HttpResponse
+
+# 视窗模板
+'''
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_question_list])
+    return HttpResponse(output)
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index." + "<br><br>" + '<img src="https://view.moezx.cc/images/2018/04/29/big_20180429b.jpg" alt="big_20180429b.jpg" border="0" />')
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    template = loader.get_template('polls/index.html')
+    context = {
+        'latest_question_list': latest_question_list,
+    }
+    return HttpResponse(template.render(context, request))
+'''
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
+
+def detail(request, question_id):
+    return HttpResponse("You're looking at question %s." % question_id)
+
+def results(request, question_id):
+    response = "You're looking at the results of question %s."
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse("You're voting on question %s." % question_id)
